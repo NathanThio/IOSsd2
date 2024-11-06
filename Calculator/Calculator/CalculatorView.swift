@@ -8,11 +8,64 @@
 import SwiftUI
 
 struct CalculatorView: View {
+    @State var result = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                TextEditor(text: .constant(result))
+                Grid {
+                    GridRow {
+                        ForEach(7..<10) {
+                            number in Button("\(number)") {
+                                
+                            }
+                        }
+                        Button("/") {
+                            
+                        }                    }
+                    GridRow {
+                        ForEach(4..<7) {
+                            number in Button("\(number)") {
+                                
+                            }
+                        }
+                        Button("*") {
+                            
+                        }                    }
+                    GridRow {
+                        ForEach(1..<4) {
+                            number in Button("\(number)") {
+                                
+                            }
+                        }
+                        Button("-") {
+                            
+                        }                    }
+                    GridRow {
+                        Button("0") {
+                            
+                        }
+                        Button("+") {
+                            
+                        }
+                    }
+                    GridRow {
+                        Button("Clear") {
+                            
+                        }
+                        Button("Enter") {
+                            
+                        }
+                    }
+                }
+            }
+            Button("Show Stack") {
+                
+            }
+        }
     }
 }
 
 #Preview {
-    CalculatorView()
+    CalculatorView(result: "test")
 }
