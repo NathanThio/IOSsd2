@@ -46,6 +46,7 @@ class WKResultsDatastore: ObservableObject {
         }
         return resultsFiltered
     }
+    
     //getAllTeams()
     func getAllTeams() -> [String] {
         let resultsFiltered = results.filter{

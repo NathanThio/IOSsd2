@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct ResultsView: View {
-    @State var selectedCountry: String = ""
+    @Binding var selectedCountry: String
+    @State var selectedMatch: String
+    @State var selectedLocation: String
+    
     var body: some View {
         NavigationSplitView {
-            ListStadiumView()
+            ListStadiumView(selectedLocation: $selectedLocation)
         } content: {
-            ListScoreView(selectedCountry: $selectedCountry)
+            ListScoreView(selectedLocation: $selectedLocation, selectedMatch: $selectedMatch, selectedCountry: $selectedCountry)
         } detail: {
             DetailGameView()
         }
+        
     }
 }
+
+
+
